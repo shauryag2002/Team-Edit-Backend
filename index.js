@@ -12,9 +12,7 @@ const socket = require("socket.io");
 const io = socket(6100, { cors: true });
 const xss = require("xss");
 dotenv.config();
-// mongodb+srv://shaurya:shaurya@cluster0.v0miz9n.mongodb.net/
-// mongodb://localhost/google-docs-clone
-mongoose.connect("mongodb://localhost/google-docs-clone", {
+mongoose.connect(process.env.mongo_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
